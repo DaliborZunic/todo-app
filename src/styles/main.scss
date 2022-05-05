@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: #343a40;
+  color: #cbcaca;
+}
+
+button {
+  font-family: "Nunito", sans-serif;
+}
+
+.App {
+  min-height: 90vh;
+}
+
+.container {
+  max-width: 600px;
+  height: 90vh;
+  margin: 5vh auto;
+  padding: 2%;
+  background-color: #3c424a;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.CreateTaskForm {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+
+  .title-input {
+    background-color: #343a40;
+    color: #ababab;
+    border: 1px solid #2e3238;
+    border-radius: 3px;
+    height: 30px;
+    padding-left: 20px;
+    flex: 1;
+    font-family: "Nunito", sans-serif;
+  }
+
+  .add-task-button {
+    width: 30px;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 50%;
+    background-color: aqua;
+    color: rgb(25, 46, 46);
+    cursor: pointer;
+  }
+}
+
+.Task {
+  font-size: 0.9rem;
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .task-menu-icon {
+    aspect-ratio: 1;
+    cursor: pointer;
+  }
+
+  .task-menu {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(40px);
+    top: -100%;
+    left: 0;
+    transition: top .6s ease;
+  }
+
+  .task-menu-expanded {
+    top: 0;
+  }
+}
+
+.sloth {
+  margin: 0 auto;
+  display: block;
+  opacity: 0.4;
+}
