@@ -1,5 +1,6 @@
 import { useState } from "react";
-import taskMenu from "../images/task_menu.svg";
+import taskMenuIcon from "../images/task_menu.svg";
+import TaskMenu from "./TaskMenu";
 
 const Task = (props) => {
   const [menuExpanded, setMenuExpanded] = useState(false);
@@ -11,13 +12,9 @@ const Task = (props) => {
     <div className="Task">
       <div className="task-title">{props.title}</div>
       <div className="task-menu-icon" onClick={toggleMenu}>
-        <img onClick={toggleMenu} src={taskMenu} alt="" />
+        <img onClick={toggleMenu} src={taskMenuIcon} alt="" />
       </div>
-      <div
-        className={`task-menu ${menuExpanded && "task-menu-expanded"}`}
-      >
-        <div className="task-title">{props.title}</div>
-      </div>
+      <TaskMenu menuExpanded = {menuExpanded} setMenuExpanded = {setMenuExpanded} id={props.id} title = {props.title} />
     </div>
   );
 };

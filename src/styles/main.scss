@@ -20,6 +20,21 @@ button {
   font-family: "Nunito", sans-serif;
 }
 
+input, textarea {
+  background-color: #343a40;
+  color: #ababab;
+  border: 1px solid #2e3238;
+  border-radius: 3px;
+  height: 30px;
+  padding-left: 20px;
+  font-family: "Nunito", sans-serif;
+}
+
+textarea {
+  height: auto;
+  padding: 20px;
+}
+
 .App {
   min-height: 90vh;
 }
@@ -78,16 +93,22 @@ button {
 
   .task-menu {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(40px);
-    top: -100%;
-    left: 0;
-    transition: top .6s ease;
+    background-color: #3c424a;
+    padding: 5%;
+    top: 0;
+    right: -100%;
+    opacity: 0;
+    transition: opacity, right 0.2s, 0.2s ease-out;
   }
 
   .task-menu-expanded {
-    top: 0;
+    right: 0;
+    opacity: 1;
   }
 }
 
@@ -95,4 +116,10 @@ button {
   margin: 0 auto;
   display: block;
   opacity: 0.4;
+}
+
+.close-icon {
+  cursor: pointer;
+  width: 15px;
+  align-self: flex-end;
 }
