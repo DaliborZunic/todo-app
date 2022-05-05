@@ -7,6 +7,7 @@ import { v4 as uuid } from 'uuid';
 const App = () => {
   const [currentTask, setCurrentTask] = useState({
     taskTitle: "",
+    taskDescription: "",
     taskId: uuid()
   });
   const [allTasks, setAllTasks] = useState([]);

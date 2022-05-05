@@ -14,7 +14,7 @@ const Task = (props) => {
       <div className="task-menu-icon" onClick={toggleMenu}>
         <img onClick={toggleMenu} src={taskMenuIcon} alt="" />
       </div>
-      <TaskMenu menuExpanded = {menuExpanded} setMenuExpanded = {setMenuExpanded} id={props.id} title = {props.title} />
+      <TaskMenu menuExpanded = {menuExpanded} setMenuExpanded = {setMenuExpanded} id={props.id} title = {props.title} description={props.description} allTasks={props.allTasks} />
     </div>
   );
 };
