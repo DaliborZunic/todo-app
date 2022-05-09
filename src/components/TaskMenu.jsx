@@ -12,25 +12,31 @@ const TaskMenu = (props) => {
   };
 
   const handleTitleChange = (e) => {
-    setTempTaskData(prevValues => {return {
-        ...prevValues, taskTitle: e.target.value
-    }})
-  }
+    setTempTaskData((prevValues) => {
+      return {
+        ...prevValues,
+        taskTitle: e.target.value,
+      };
+    });
+  };
 
   const handleDescriptionChange = (e) => {
-    setTempTaskData(prevValues => {return {
-        ...prevValues, taskDescription: e.target.value
-    }})
-  }
+    setTempTaskData((prevValues) => {
+      return {
+        ...prevValues,
+        taskDescription: e.target.value,
+      };
+    });
+  };
 
   const handleSaveChange = () => {
-      const index = props.allTasks.map( task => task.taskId ).indexOf(props.id)
-      console.log(index);
-  }
+    const index = props.allTasks.map((task) => task.taskId).indexOf(props.id);
+    console.log(index);
+  };
 
-  useEffect( () => {
+  useEffect(() => {
     console.log(tempTaskData);
-  }, [tempTaskData] ) 
+  }, [tempTaskData]);
 
   return (
     <div className={`task-menu ${props.menuExpanded && "task-menu-expanded"}`}>
@@ -40,8 +46,20 @@ const TaskMenu = (props) => {
         src={closeIcon}
         alt=""
       />
-      <input type="text" onChange={handleTitleChange} value={tempTaskData.taskTitle} />
-      <textarea onChange={handleDescriptionChange} value={tempTaskData.taskDescription} name="" id="" cols="30" rows="10" placeholder="Add a task description"></textarea>
+      <input
+        type="text"
+        onChange={handleTitleChange}
+        value={tempTaskData.taskTitle}
+      />
+      <textarea
+        onChange={handleDescriptionChange}
+        value={tempTaskData.taskDescription}
+        name=""
+        id=""
+        cols="30"
+        rows="10"
+        placeholder="Add a task description"
+      ></textarea>
       <button onClick={handleSaveChange}>Save changes</button>
     </div>
   );
