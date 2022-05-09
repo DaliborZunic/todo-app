@@ -25,7 +25,7 @@ const App = () => {
           allTasks={allTasks}
           setAllTasks={setAllTasks}
         />
-        <TaskContainer allTasks={allTasks} />
+        <TaskContainer allTasks={allTasks} setAllTasks={setAllTasks} />
       </div>
     </div>
   );

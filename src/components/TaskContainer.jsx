@@ -9,7 +9,7 @@ const TaskContainer = (props) => {
         props.allTasks.length === 0 && <img className="sloth" src={sloth} alt="" />
       }
       {props.allTasks.map((task) => (
-        <Task key={task.taskId} id={task.taskId} title={task.taskTitle} description={task.taskDescription} allTasks={props.allTasks} />
+        <Task key={task.taskId} id={task.taskId} title={task.taskTitle} description={task.taskDescription} allTasks={props.allTasks} setAllTasks={props.setAllTasks} />
       ))}
     </div>
   );

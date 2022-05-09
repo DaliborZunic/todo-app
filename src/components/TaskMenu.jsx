@@ -31,7 +31,10 @@ const TaskMenu = (props) => {
 
   const handleSaveChange = () => {
     const index = props.allTasks.map((task) => task.taskId).indexOf(props.id);
-    console.log(index);
+    const tempTasks = props.allTasks
+    tempTasks.splice(index, 1, tempTaskData)
+    props.setAllTasks([...tempTasks])
+    props.setMenuExpanded(!props.menuExpanded)
   };
 
   useEffect(() => {
