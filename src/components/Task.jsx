@@ -1,5 +1,6 @@
 import { useState } from "react";
 import taskMenuIcon from "../images/task_menu.svg";
+import taskDoneIcon from "../images/task-done.svg";
 import TaskMenu from "./TaskMenu";
 
 const Task = (props) => {
@@ -19,7 +20,9 @@ const Task = (props) => {
 
   return (
     <div className="Task">
-      <div className={`task-done-icon ${props.taskDone && "task-done-icon-checked"}`} onClick={handleTaskDoneClick}></div>
+      <div className={`task-done-icon ${props.taskDone && "task-done-icon-checked"}`} onClick={handleTaskDoneClick}>
+        <img src={taskDoneIcon} alt="" />
+      </div>
       <div className="task-data">
         <div className="task-title">{props.title}</div>
         {props.description && (
