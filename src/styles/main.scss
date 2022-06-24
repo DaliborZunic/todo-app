@@ -115,6 +115,7 @@ textarea {
     right: -100%;
     opacity: 0;
     transition: opacity, right 0.3s, 0.2s ease-in-out;
+    z-index: 1;
   }
 
   .task-data {

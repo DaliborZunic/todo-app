@@ -1,5 +1,5 @@
 import "../styles/main.scss";
-import { v4 as uuid } from 'uuid';
+import { v4 as uuid } from "uuid";
 
 const CreateTaskForm = (props) => {
   const handleTitleChange = (e) => {
@@ -12,10 +12,12 @@ const CreateTaskForm = (props) => {
     props.setCurrentTask((prevValues) => {
       return { ...prevValues, taskId: uuid() };
     });
-    props.setAllTasks(prevValues => [...prevValues, props.currentTask])
-    props.setCurrentTask((prevValues) => {
-      return { ...prevValues, taskTitle: "" };
-    });
+    if (props.currentTask.taskTitle) {
+      props.setAllTasks((prevValues) => [...prevValues, props.currentTask]);
+      props.setCurrentTask((prevValues) => {
+        return { ...prevValues, taskTitle: "" };
+      });
+    }
   };
 
   return (
