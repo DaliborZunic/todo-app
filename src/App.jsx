@@ -8,13 +8,14 @@ const App = () => {
   const [currentTask, setCurrentTask] = useState({
     taskTitle: "",
     taskDescription: "",
-    taskId: uuid()
+    taskId: uuid(),
+    taskDone: false
   });
   const [allTasks, setAllTasks] = useState([]);
 
-  useEffect( () => {
+  useEffect(()=>{
     console.log(allTasks);
-  }, [allTasks] )
+  }, [allTasks])
 
   return (
     <div className="App">

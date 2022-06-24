@@ -37,10 +37,6 @@ const TaskMenu = (props) => {
     props.setMenuExpanded(!props.menuExpanded)
   };
 
-  useEffect(() => {
-    console.log(tempTaskData);
-  }, [tempTaskData]);
-
   return (
     <div className={`task-menu ${props.menuExpanded && "task-menu-expanded"}`}>
       <img

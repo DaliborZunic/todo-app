@@ -91,12 +91,14 @@ textarea {
 .Task {
   font-size: 0.9rem;
   padding: 8px 0;
+  gap: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
 
   .task-menu-icon {
     aspect-ratio: 1;
+    margin-left: auto;
     cursor: pointer;
   }
 
@@ -115,9 +117,30 @@ textarea {
     transition: opacity, right 0.3s, 0.2s ease-in-out;
   }
 
+  .task-data {
+    padding-right: 30px;
+  }
+
+  .task-description {
+    color: #9e9b9b;
+    font-size: .8rem;
+  }
+
   .task-menu-expanded {
     right: 0;
     opacity: 1;
+  }
+
+  .task-done-icon {
+    border: 1px solid aqua;
+    flex: 0 0 20px;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    cursor: pointer;
+  }
+
+  .task-done-icon-checked {
+    background-color: aqua;
   }
 }
 
